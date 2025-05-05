@@ -2,7 +2,8 @@
 -- # Week 7 Assignment: Database Design & Normalization     #
 -- # Submitted by: Nancy Kerubo                            #
 -- #########################################################
-
+CREATE DATABASE foodBD;
+USE foodDB;
 -- Question 1: Achieving 1NF
 -- Original table with multi-valued Products column
 CREATE TABLE ProductDetail (
@@ -27,7 +28,7 @@ JOIN (
     SELECT 3 UNION ALL
     SELECT 4
 ) AS numbers
-ON CHAR_LENGTH(Products) - CHAR_LENGTH(REPLACE(Products, ',', '', '')) >= n - 1;
+ON CHAR_LENGTH(Products) - CHAR_LENGTH(REPLACE(Products, ',', '')) >= n - 1;
 
 -- Question 2: Achieving 2NF
 -- Original table with partial dependency
